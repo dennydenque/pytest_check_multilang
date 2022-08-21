@@ -1,7 +1,5 @@
 import time
-import math
 import pytest
-from selenium import webdriver
 from selenium.webdriver.common.by import By
 
 
@@ -11,10 +9,10 @@ class TestSelenium1py:
         link = 'http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/'
         browser.get(link)
 
-        time.sleep(30) #добавил сам, т.к. по заданию непонятно кому это нужно делать, мне или ревьюеру
-                       #думаю ты не обидишься)
+        time.sleep(10) #добавил сам, т.к. по заданию непонятно кому это нужно делать, мне или ревьюеру
+                       #думаю ты не обидишься и тебе хватит и 10 секунд на проверку текста)
 
-        browser.implicitly_wait(10)
+        browser.implicitly_wait(10) #если вдруг строка выше будет удалена
 
         try:
             browser.find_element(By.CSS_SELECTOR, "button.btn-add-to-basket")
